@@ -1,7 +1,6 @@
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
-
 
 module.exports = {
     entry: {
@@ -9,7 +8,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '/js/[name].bundle.js'
     },
     module: {
         rules: [
@@ -28,7 +27,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Bazinga!',
+            title: 'Bootstrap 4 Basics',
             // minify: {
             //     collapseWhitespace: true
             // },
@@ -38,7 +37,7 @@ module.exports = {
         new ExtractTextPlugin({
             allChunks: true,
             disable: false,
-            filename: 'app.css'
+            filename: '/css/[name].bundle.css'
         })
     ]
 }
